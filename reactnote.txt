@@ -1,0 +1,356 @@
+React
+
+React is a free and open-source front-end JavaScript library for building user interfaces based on components. 
+It is maintained by Meta and a community of individual developers and companies. 
+React can be used to develop single-page, mobile, or server-rendered applications
+
+Commands
+1. npx create-react-app app_name
+2. cd app_name
+3. npm start
+
+Components
+In React, applications are built using components. Components are the building blocks of a React application, 
+and they represent reusable and self-contained pieces of the user interface. React components can be divided into two main categories: 
+class components and functional components. Here's an overview of components in React:
+
+Functional Components:
+
+Functional components are also known as stateless components or functional stateless components.
+They are defined as JavaScript functions and return JSX (JavaScript XML) to describe the user interface.
+Functional components don't have their own internal state (until React 16.8, when hooks were introduced).
+They are simpler to write and understand, making them a preferred choice for many use cases.
+
+Class Components:
+
+Class components are also known as stateful components or class stateful components.
+They are defined as JavaScript classes that extend React.Component.
+Class components have their own internal state, making them suitable for handling complex logic and maintaining component-specific data.
+They can have lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount for managing side effects and interactions.
+
+
+
+in src create a new folder component name i give mesage .js 
+
+message.js
+import React from 'react'
+function Message(){
+return <h1  class="text-dark">hlo welcome</h1>
+}
+export default Message
+
+
+app.js
+import Message from './components/Message';
+ 
+ <Message></Message>
+
+*belowheader paste  <Message></Message>
+
+
+
+another 
+
+message.js
+import React from 'react'
+// function Message(){
+// return <><h1 class="text-dark">hlo welcome</h1><h2 class="text-dark">bork is here</h2></>
+// }
+// export default Message 
+export const Message = () => <h1> hello binshul</h1>
+
+app.js
+import {Message} from './components/Message';
+
+
+
+
+<!------------------------------------------------->
+
+Class component new file created componentss
+
+import React, { Component } from 'react'
+
+class Welcome extends Component{
+render(){
+return <h1>Hello Rahul</h1>
+}
+}
+export default Welcome
+
+
+js
+
+app.js 
+# look only components place 
+
+import './App.css';
+import {Message} from './components/Message';
+import Components from './components/Components';
+
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Message></Message>
+        <Components></Components>
+
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+navbar session 4 link home about service contact
+
+login form  email ,password
+
+footersession
+
+small project 
+
+
+html
+
+import React, { Component } from 'react'
+class Mess extends Component{
+render(){
+return (
+  
+   <div>
+    <nav class="navbar nav1 navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SERVICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> 
+  <br></br>
+
+<div className='container login w-50'>
+<h2>Login form </h2>
+<form action="/register" class="form-control" method="post">
+<input type='text' class="form-control" name="email" placeholder='email'></input> <br></br>
+<input type='text' class="form-control" name="password" placeholder='password'></input> <br></br>
+<input type='button' class="btn btn-danger" value="submit"></input>
+</form>
+</div> <br></br>
+
+  <footer class="text-center text-white footer2 fixed-bottom">
+    <div class="container p-4 pb-0">
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p>
+      </section>
+    </div>
+    <div class="text-center p-3 footer3">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+
+</div>
+)
+
+
+}
+}
+export default Mess
+
+app.js
+
+import logo from './logo.svg';
+import './App.css';
+import Mess from './components/Mess';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+     <Mess></Mess>
+        
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+<!------------------------------------------------button click sentence come subscribe now buttton click come output thanks for subscribe----------------------------------------------------------------------------------->
+
+#######clas.js
+import React, { Component } from 'react'
+
+class Clas extends Component{
+    constructor(){
+        super()
+        this.state={
+            clan:"welcome user"
+        }
+    }
+    changeMessage(){
+        this.setState({
+            clan:'Thanku for subscribing us'
+
+        })
+    }
+    render(){
+        return(
+        <div>
+        <h1>{this.state.clan}</h1>
+        <button onClick={()=>this.changeMessage() }>subscribe</button>
+        </div>
+        ) 
+    }
+}
+export default Clas
+
+
+
+##### app.js
+import Clas from './components/Clas'
+  <Clas></Clas>
+
+#######3or slide share sir 
+
+########Message.js
+
+class Message extends Component{
+constructor(){
+super()
+this.state={
+message: "Welcome user"
+}
+}
+
+changeMessage(){
+this.setState({
+message:'Thanku for subscribing us'
+})
+}
+
+render(){
+return(
+<div>
+  <h1>{this.state.message}</h1>
+  <button onClick={() => this.changeMessage()} >
+    Subscribe
+  </button>
+</div>
+
+)
+}
+}
+
+
+<!---------------------------------------------------------IN BUTTTON CLICK SUBSCRIBE IT SHOW IN BUTTONSUBSCRIBED------------------------------------------------------------------------------------>
+
+import React, { Component } from 'react'
+
+class Clas extends Component{
+    constructor(){
+        super()
+        this.state={
+            clan:"welcome user", label:"subscribe"
+        }
+    }
+    changeMessage(){
+        this.setState({
+            clan:'Thanku for subscribing us', label:"subscribed"
+
+        })
+    }
+    render(){
+        return(
+        <div>
+        <h1>{this.state.clan}</h1>
+        <button onClick={()=>this.changeMessage() }>{this.state.label} </button>
+        </div>
+        ) 
+    }
+}
+export default Clas
+
+APP.JS
+import Clas from './components/Clas'
+
+      <Clas></Clas>
+
+<!--------------------------------COUNT INCREENT DECREMENT RETEST---------------------------------------------------------------------------------------------------->
+
+Acount.js
+import React, {Component} from "react";
+
+var qq=1
+
+class Acount extends Component{
+  constructor(){
+    super()
+      this.state={message: qq}
+  }
+  changeMessage(){
+    this.setState({
+        message: qq++
+    })
+  }
+  changeMessage2() {
+    this.setState({
+      message: qq--
+    })
+  }
+  changeMessage1() {
+    this.setState({
+      message: qq=0
+    })
+  }
+
+  render(){
+    return (
+      <div>
+        <h1>Countdown</h1>
+        <h1>{this.state.message}</h1>
+        <button onClick={() => this.changeMessage()}>Increment</button>
+        <button onClick={() => this.changeMessage2()}>Decrement</button>
+        <button onClick={() => this.changeMessage1()}>Reset</button>
+
+      </div>
+    )
+  }
+}
+
+export default Acount
+
+APP.JS
+
+import Acount from './components/Acount';
+              <Acount></Acount>

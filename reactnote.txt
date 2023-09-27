@@ -49,7 +49,7 @@ import Message from './components/Message';
 
 
 
-another 
+another IF WE WANT TO IMPORT MORE USE ()
 
 message.js
 import React from 'react'
@@ -354,3 +354,714 @@ APP.JS
 
 import Acount from './components/Acount';
               <Acount></Acount>
+
+
+
+
+<!------------------------------------------displaydata in register page using simple array -------------------------------------------------------------------->
+
+
+################MESS.JS
+
+import React, { Component } from 'react'
+class Mess extends Component{
+
+  constructor(){
+    super()
+    this.state={
+        Button:"REGISTER FORM"
+    }
+}
+changeMessage(){
+    this.setState({
+        Button:"SUCESSFULLY REGISTERED"
+
+    })
+}
+
+render(){
+return (
+
+   <div>
+    <nav class="navbar nav1 navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SERVICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> 
+  <br></br>
+
+<div className='container login w-50'>
+<h2> {this.state.Button}</h2>
+
+<input type='text' class="form-control" value={this.props.name} name="name" placeholder='name'></input> <br></br>
+<input type='text' class="form-control" name="address" value={this.props.address} placeholder='address'></input> <br></br>
+<input type='text' class="form-control" name="contact" value={this.props.contact}  placeholder='contact'></input> <br></br>
+<input type='text' class="form-control" name="email" value={this.props.email}  placeholder='email'></input> <br></br>
+<input type='text' class="form-control" name="password" value={this.props.password}  placeholder='password'></input> <br></br>
+<h1></h1>
+                <button onClick={()=>this.changeMessage()}>click here</button>
+
+</div> <br></br>
+
+  <footer class="text-center text-white footer2 fixed-bottom">
+    <div class="container p-4 pb-0">
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p>
+      </section>
+    </div>
+    <div class="text-center p-3 footer3">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+  
+</div>
+)
+
+
+}
+}
+export default Mess
+
+#############APP.JS
+
+import logo from './logo.svg';
+import './App.css';
+import Mess from './components/Mess';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+     <Mess name="binshul" address="villabinshul"  contact="984799841"   email="binshuljacobofficial@gmail.com"  password="9847992841"></Mess>
+        
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+
+<1------------------------------------------------------------------CONDITION--------------------------------------------------------------------------------->
+
+
+Conditional Rendering
+
+Conditional rendering in React allows you to render different components or content based 
+on certain conditions or variables. 
+Can achieve this using various techniques, including if statements, ternary operators, 
+and the && operator..
+
+if statement
+
+class Welcome extends Component{
+constructor(){
+super()
+this.state={
+is_logged_in: true
+}
+}
+render(){
+if(this.state.is_logged_in){
+	return <div>Welcome Admin</div>
+}
+else{
+  return <div>Welcome Guest</div>
+}
+}
+}
+
+
+Ternary operator(Conditional operator) ?:
+
+class Welcome extends Component{
+constructor(){
+super()
+this.state={
+is_logged_in: true
+}
+}
+render(){
+  return this.state.is_logged_in ? (
+    <div>Welcome Admin</div>
+  ) : (
+  	<div>Welcome Guest</div>
+  )
+  
+}
+}
+
+
+&& Operator
+
+class Welcome extends Component{
+constructor(){
+super()
+this.state={
+is_logged_in: true
+}
+}
+render(){
+  return this.state.is_logged_in && <div>Welcome Admin</div>
+}
+}
+
+ List Rendering
+
+function Namelist(){
+	const names=['manu','Vishnu','Rahul']
+  return(
+  	<div>
+    <h2{names.map(name=>)}</h2>
+    </div>
+  )
+}
+export default Namelist
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+student id   contact email class 5
+
+
+map dispalay 
+
+
+
+
+import React from "react"
+function Objname(){
+    const students=[
+        {
+            student_roll:"100",
+            contact:"9847992841",
+            email:"binshul@gmail.com",
+            class:"12th std"
+
+        },
+        {
+            student_roll:"101",
+            contact:"9847992841",
+            email:"dhanshul@gmail.com",
+            class:"10th std"
+
+        },
+        {
+            student_roll:"103",
+            contact:"9847992841",
+            email:"rahul@gmail.com",
+            class:"10th std"
+
+        },
+        {
+            student_roll:"104",
+            contact:"9847992841",
+            email:"ambarish@gmail.com",
+            class:"12th std"
+
+        },
+        {
+            student_roll:"105",
+            contact:"9847992841",
+            email:"ashib@gmail.com",
+            class:"11th std"
+
+        },
+    ]
+        
+
+return(
+    <div>
+    <div className="container">  
+    <h4 class="text-danger">Register students</h4>        
+     <table>
+  
+    <tr>
+       <th  class="text-danger">student_roll</th>
+       <th  class="text-danger">contact</th>
+       <th  class="text-danger"> email</th>
+       <th  class="text-danger"> class</th>
+    </tr>
+
+      {students.map(student =>
+    <tr>
+         <td><h2  class="text-success">{student.student_roll}</h2> </td>
+         <td><h2  class="text-success"> {student.contact}</h2></td>
+         <td><h2  class="text-success"> {student.email}</h2></td>
+         <td><h2  class="text-success"> {student.class}</h2> </td>
+   </tr>
+
+         )}
+      
+      </table>
+      </div>
+      </div>
+    )
+  }
+
+export default Objname
+
+
+
+app.js
+
+import Objname from './Displayfives';
+<Objname></Objname>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------Style.css---------------------------------------------------------------------------------->
+
+
+CSS Styling
+
+Styling in React can be achieved using various methods, and one of the most common approaches 
+is to use Cascading Style Sheets (CSS). 
+Here are several ways to apply CSS styling to your React components:
+
+1. Inline Style
+2. External Style Sheet  
+3. CSS Modules
+
+Eg:
+1.
+const divStyle = {
+  color: 'blue',
+  backgroundColor: 'lightgray',
+};
+
+function MyComponent() {
+  return <div style={divStyle}>Hello, React!</div>;
+}
+2. 
+Js
+import './styles.css';
+
+function MyComponent() {
+  return <div className="my-style">Hello, React!</div>;
+}
+
+style.css
+
+.my-style {
+  color: blue;
+  background-color: lightgray;
+}
+
+3. 
+Js
+import styles from './MyComponent.module.css';
+
+function MyComponent() {
+  return <div className={styles.myStyle}>Hello, React!</div>;
+}
+
+MyComponent.module.css
+
+.myStyle {
+  color: blue;
+  background-color: lightgray;
+}
+
+
+<!----------------------------------------------FORM----------------VALUE INSERT------------------------------------------------------------------------------------------------------>
+
+ class component 
+name language    comments 
+      selctbox(php react     textarea      
+
+subit button  USING CLASS
+
+
+
+in form.js
+Form Handling
+
+In React, handling forms involves creating and managing HTML form elements within your 
+components and then capturing user input and managing form submission. 
+React provides a controlled component pattern for handling forms,
+where the form elements' values are controlled by the state of the component.
+
+Eg:
+import React, { Component } from 'react';
+
+class MyForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      language: 'React', // Default value for the select box
+      comments: '',
+    }
+  }
+  
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+  
+  handleSubmit = event => {
+    alert(`${this.state.name} ${this.state.language} ${this.state.comments}`)
+  }
+  
+    render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div>
+          <label>
+            Name:
+            <input				
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Language:
+            <select
+              name="language"
+              value={this.state.language}
+              onChange={this.handleInputChange}
+            >
+              <option value="React">React</option>
+              <option value="Angular">Angular</option>
+              <option value="PHP">PHP</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>
+            Comments:
+            <textarea
+              name="comments"
+              value={this.state.comments}
+              onChange={this.handleInputChange}
+            />
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+
+
+<!-----------------------------------myne code write above code softzane code share --------------------------->
+
+
+import React, { Component } from 'react'
+
+class Forms extends Component{
+  constructor(){
+    super();
+    this.state={
+      name:'',
+      language:'php',
+      comment:'',
+    }
+  }
+  handleInputChange = event =>{
+    const {name,value}= event.target;
+    this.setState({[name]:value})
+  }
+  handlesubmit = event =>{
+    alert(`${this.state.name} ${this.state.language} ${this.state.comment}`)
+  }
+      render(){
+        return(
+            <div>
+
+ <div className="container w-50  mt-5"> <br />
+  <h3>REGISTER FORM</h3> 
+ <form action="" method="post" onSubmit={this.handlesubmit}>
+
+          <input type="text" value={this.state.name} onChange={this.handleInputChange} name='name' class="form-control" placeholder='name'></input>
+
+          <label for="language">language</label>
+          <select value={this.state.language} onChange={this.handleInputChange}  class="form-control" id="language">
+          <option class="form-control" value="php">php</option>
+           <option class="form-control" value="python">python</option>
+           <option class="form-control" value="react">react</option>
+           <option  class="form-control" value="mongodb">mongodb</option>
+          </select> <br/>
+
+                <textarea name="comment" value={this.state.comment} onChange={this.handleInputChange}  class="form-control" placeholder='comment'></textarea>
+                <input type="submit" class="btn btn-danger" value="submit"></input>
+                
+              </form>
+              </div>
+
+
+           
+
+            </div>
+        )
+    }
+}
+
+
+
+export default Forms
+
+
+<!------------------for print in colsole we use  console.log below and insert in submit button also on click --------------------------------->
+
+
+import React, { Component } from 'react'
+
+class Forms extends Component{
+  constructor(){
+    super();
+    this.state={
+      name:'',
+      language:'React',
+      comment:'',
+    }
+  }
+  handleInputChange = event =>{
+    const {name,value}= event.target;
+    this.setState({[name]:value})
+  }
+  handlesubmit = event =>{
+    // alert(`${this.state.name} ${this.state.language} ${this.state.comment}`)
+    console.log('Form submitted with data:', this.state);
+  }
+      render(){
+        return(
+            <div>
+
+ <div className="container w-50  mt-5"> <br />
+  <h3>REGISTER FORM</h3> 
+ {/* <form action="" method="post" onSubmit={this.handlesubmit}> */}
+
+        <input type="text" value={this.state.name} onChange={this.handleInputChange} name='name' class="form-control" placeholder='name'></input>
+
+         
+
+          <label>
+            Language:
+            <select  name="language" className='form-select'value={this.state.language} onChange={this.handleInputChange}>
+              <option value="React">React</option>
+              <option value="Angular">Angular</option>
+              <option value="PHP">PHP</option>
+            </select>
+          </label><br /><br />
+
+       
+          <textarea name="comment" value={this.state.comment} onChange={this.handleInputChange}  class="form-control" placeholder='comment'></textarea>
+          <input type="submit" onClick={this.handlesubmit}  class="btn btn-danger" value="submit"></input> <br /> <br />
+                
+              {/* </form> */}
+              </div>
+
+
+           
+
+            </div>
+        )
+    }
+}
+
+
+
+export default Forms
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+Routing
+
+React Routing is a popular library for handling routing in web applications built with React.
+It allows you to create single-page applications (SPAs) by managing the navigation 
+and rendering of different components based on the URL without the need to make full page 
+requests to the server. React Router is commonly used for building dynamic and interactive 
+web applications.
+
+Here are the key concepts and components of React Routing:
+
+1.BrowserRouter: This is a component that provides the routing functionality for your 
+application. It uses HTML5 history API to manage the URL and keep your UI in sync 
+with the URL.
+
+2.Route: The <Route> component is used to define a route in your application. 
+It matches the URL and renders the specified component when the URL matches the path defined 
+in the route.
+
+3.Link: The <Link> component is used to navigate between different routes in your application. 
+It renders an anchor tag (<a>) that when clicked, changes the URL without a full page reload.
+
+4.Switch: The <Switch> component is used to render only the first <Route> that matches 
+the current URL. This is useful for preventing multiple routes from matching at the same time.
+
+5.Route Parameters: You can define dynamic segments in your routes using colons, like /:id, 
+and then access these parameters in your component through the props.match.params object.
+
+npm install react-router-dom
+
+
+###just basic class call not related to above topic 
+import React, { Component } from 'react'
+class About extends Component{
+      render(){
+        return(
+           <div> 
+{/* 
+<h1>njdnfjc</h1> */}
+
+            </div>
+
+
+        )
+    }
+}
+
+export default About
+
+
+<@-----------------------------------------npm install react-router-dom [connecting pages]--------------------------------------------------------->
+
+App.js
+
+import React from 'react';
+import {BrowserRouter as Router , Route,Routes} from 'react-router-dom';
+import Nav from './Nav';
+import Abouts from './Abouts';
+import Service from './Service.';
+import Contact from './Contact';
+
+
+
+function App(){
+  return(
+    <Router>
+    <Routes>
+      <Route exact path="/" element={<Nav/>}/>
+      <Route exact path="/Abouts" element={<Abouts/>}/>
+      <Route exact path="/Service" element={<Service/>}/>
+      <Route exact path="/Contact" element={<Contact/>}/>
+    
+    </Routes>
+    </Router>
+  )
+}
+
+export default App;
+
+
+
+Home.js
+
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+
+function Nav (){
+        return(
+           <div> 
+
+<nav class="navbar  navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid nav">
+  <Link to="/">home</Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto ">
+      
+        <li class="nav-item">
+        <Link to="/Abouts">Abouts</Link>
+        </li>
+        <li class="nav-item">
+        <Link to="/Service">Service</Link>
+        </li>
+        <li class="nav-item">
+        <Link to="/Contact">Contact</Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+           
+  </div>
+        )
+    }
+
+export default Nav;
+
+
+<!-----CONATCT .JS PAGE ------>
+
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+
+function Contact (){
+        return(
+           <div> 
+
+
+            <h1>welcome to Contact page </h1>  
+           
+           
+            </div>
+
+
+        )
+    }
+
+
+
+
+export default Contact;
+
+
+<!-----ABOUT .JS PAGE ------>
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+
+function Abouts (){
+        return(
+           <div> 
+
+
+            <h1>welcome to about page </h1>  
+           
+           
+            </div>
+
+
+        )
+    }
+
+export default Abouts;
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+

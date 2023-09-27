@@ -1063,5 +1063,30 @@ export default Abouts;
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+ React Bootstrap
+
+React Bootstrap is a popular front-end framework for building responsive and visually appealing
+web applications using React, a JavaScript library for building user interfaces. 
+It combines the power of React with the design and styling capabilities of Bootstrap, 
+a widely used CSS framework.
+
+npm install react-bootstrap bootstrap
+
+import the react-bootrap library in your index.js
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+Eg:
+import React from 'react';
+import { Button } from 'react-bootstrap';
+
+function MyComponent() {
+  return (
+    <Button variant="primary">Primary Button</Button>
+  );
+}
+
+export default MyComponent;
+
 
 
